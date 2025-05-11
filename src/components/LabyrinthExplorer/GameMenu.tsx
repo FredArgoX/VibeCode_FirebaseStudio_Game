@@ -19,13 +19,13 @@ export function GameMenu({ onStartGame }: GameMenuProps) {
           <div className="flex justify-center mb-4">
             <Flame className="w-16 h-16 text-accent" />
           </div>
-          <CardTitle className="text-3xl font-bold text-primary-foreground">Labyrinth Explorer</CardTitle>
+          <CardTitle className="text-3xl font-bold text-primary-foreground">Laberinto de la Llorona</CardTitle>
           <CardDescription className="text-muted-foreground mt-2">
-            The Weeping Woman seeks her child. Guide her through the spectral maze.
+            La Llorona busca a sus hijos. Guiala a traves del laberinto.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <p className="text-center text-lg font-medium">Choose Your Ordeal:</p>
+          <p className="text-center text-lg font-medium">Elije la dificultad:</p>
           {difficulties.map((level) => (
             <Button
               key={level}

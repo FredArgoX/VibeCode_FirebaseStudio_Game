@@ -15,7 +15,7 @@ export function StoryIntro({ isOpen, onClose }: StoryIntroProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[600px] bg-card text-card-foreground shadow-xl rounded-lg">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-center text-accent">The Legend of La Llorona</DialogTitle>
+          <DialogTitle className="text-2xl font-bold text-center text-accent">La Leyenda de La Llorona<br/>By: SamuelFredX Technologies</DialogTitle>
         </DialogHeader>
         <ScrollArea className="h-[300px] w-full p-1 rounded-md border border-border">
           <DialogDescription className="text-sm whitespace-pre-line p-4 leading-relaxed">
@@ -24,7 +24,7 @@ export function StoryIntro({ isOpen, onClose }: StoryIntroProps) {
         </ScrollArea>
         <DialogFooter>
           <Button onClick={onClose} className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            Enter the Labyrinth
+            Entra al laberinto
           </Button>
         </DialogFooter>
       </DialogContent>
