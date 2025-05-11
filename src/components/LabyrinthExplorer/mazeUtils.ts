@@ -1,45 +1,81 @@
 import type { MazeGrid, Point, GameConfig } from './types';
 import { CellType } from './types';
-import { DIFFICULTY_SETTINGS } from './constants'; // Corrected import path
 
-// Basic Maze Generation (simple random walls, ensuring path from start to end)
+// Simple Maze Generation using Recursive Backtracking
 export function generateMaze(config: GameConfig): {
   mazeGrid: MazeGrid;
   playerStart: Point;
   childPos: Point;
 } {
   const { rows, cols } = config;
+
+  // Initialize the maze with all walls
   const mazeGrid: MazeGrid = Array(rows)
     .fill(null)
-    .map(() => Array(cols).fill(CellType.PATH));
+    .map(() => Array(cols).fill(CellType.WALL));
 
-  // Create borders
-  for (let r = 0; r < rows; r++) {
-    mazeGrid[r][0] = CellType.WALL;
-    mazeGrid[r][cols - 1] = CellType.WALL;
-  }
-  for (let c = 0; c < cols; c++) {
-    mazeGrid[0][c] = CellType.WALL;
-    mazeGrid[rows - 1][c] = CellType.WALL;
-  }
+  // Define the starting point for the maze generation
+  const startNode: Point = { x: 1, y: 1 }; // Start from a non-border cell
 
-  // Add some random internal walls
-  const numInternalWalls = Math.floor(rows * cols * 0.2); // 20% walls
-  for (let i = 0; i < numInternalWalls; i++) {
-    const r = Math.floor(Math.random() * (rows - 2)) + 1;
-    const c = Math.floor(Math.random() * (cols - 2)) + 1;
-    if (mazeGrid[r][c] === CellType.PATH) {
-      mazeGrid[r][c] = CellType.WALL;
+  // Recursive Backtracking algorithm
+  function carvePath(x: number, y: number) {
+    const directions = [
+      { dx: 0, dy: -2 }, // Up
+      { dx: 0, dy: 2 }, // Down
+      { dx: -2, dy: 0 }, // Left
+      { dx: 2, dy: 0 }, // Right
+    ];
+
+    // Shuffle directions randomly
+    for (let i = directions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [directions[i], directions[j]] = [directions[j], directions[i]];
+    }
+
+    mazeGrid[y][x] = CellType.PATH;
+
+    for (const dir of directions) {
+      const nx = x + dir.dx;
+      const ny = y + dir.dy;
+
+      // Check if the next cell is within bounds and is a wall
+      if (nx > 0 && nx < cols - 1 && ny > 0 && ny < rows - 1 && mazeGrid[ny][nx] === CellType.WALL) {
+        // Carve a path through the wall between the current cell and the next cell
+        mazeGrid[y + dir.dy / 2][x + dir.dx / 2] = CellType.PATH;
+        carvePath(nx, ny);
+      }
     }
   }
-  
+
+  // Start carving the path from the start node
+  carvePath(startNode.x, startNode.y);
+
   // Define start and end points, ensure they are paths
   const playerStart: Point = { x: 1, y: 1 };
   const childPos: Point = { x: cols - 2, y: rows - 2 };
 
-  mazeGrid[playerStart.y][playerStart.x] = CellType.PATH; // Ensure start is path
-  mazeGrid[childPos.y][childPos.x] = CellType.PATH; // Ensure end is path
-  
+  // Ensure start and end points are paths, and create a direct path if needed (simple fix for potential disconnections)
+  mazeGrid[playerStart.y][playerStart.x] = CellType.PATH;
+  mazeGrid[childPos.y][childPos.x] = CellType.PATH;
+
+  // Simple connection to ensure solvability if recursive backtracking doesn't connect start/end directly
+  // This is a basic approach and can create less interesting mazes. A more complex algorithm would handle this better.
+  let currentX = playerStart.x;
+  let currentY = playerStart.y;
+
+  while (currentX !== childPos.x || currentY !== childPos.y) {
+    if (currentX < childPos.x) {
+      currentX++;
+    } else if (currentX > childPos.x) {
+      currentX--;
+    } else if (currentY < childPos.y) {
+      currentY++;
+    } else if (currentY > childPos.y) {
+      currentY--;
+    }
+    mazeGrid[currentY][currentX] = CellType.PATH;
+  }
+
   // Basic path carving attempt (not guaranteed optimal or always successful for complex random walls)
   // This is a very naive way to ensure connectivity. A* or DFS would be better.
   // For simplicity, we'll assume the random wall placement doesn't completely block off start/end often

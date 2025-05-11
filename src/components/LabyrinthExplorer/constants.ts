@@ -38,13 +38,15 @@ export const MESSAGES = {
 };
 
 export const LA_LLORONA_STORY = `
-In the darkest corners of folklore, a chilling tale is whispered - the story of La Llorona, The Weeping Woman. 
-Legend says she was a beautiful woman who, in a fit of jealous rage against her unfaithful husband, drowned her own children in a river. 
-Consumed by guilt and sorrow, her spirit is now cursed to roam the earth, eternally searching for her lost offspring. 
-Her mournful cries, "¡Ay, mis hijos!" ("Oh, my children!"), echo through the night, striking fear into the hearts of those who hear them. 
-They say if you hear her weeping, she is near. And if you see her, she might mistake you for one of her own... and drag you to a watery grave.
+Hace muchos años, vivía una mujer hermosa de origen humilde, llamada María. Su belleza era tan grande que todos los hombres del pueblo la admiraban. Un día, un hombre rico —a veces descrito como un noble español o un caballero criollo— quedó encantado con ella. 
+A pesar de pertenecer a clases sociales distintas, él la cortejó, y finalmente ella aceptó casarse con él. 
 
-You, as the spirit of La Llorona, are trapped in an ethereal labyrinth, desperately seeking your lost child. 
-But beware, for spectral hunters, remnants of those who sought to banish you, still roam these twisted paths, eager to weaken your already tormented soul. 
-Find potions to sustain your spiritual form and navigate the maze to reunite with your child.
+Tuvieron dos o tres hijos (según la versión), y durante un tiempo fueron felices. Sin embargo, con el paso de los años, el hombre comenzó a distanciarse. Volvía tarde a casa, se interesaba poco por sus hijos y finalmente la abandonó por una mujer de su mismo nivel social. 
+
+Desesperada, devastada por el dolor y la traición, María perdió la razón. En un momento de locura, llevó a sus hijos al río y los ahogó. Al darse cuenta de lo que había hecho, fue consumida por el remordimiento. Algunas versiones dicen que se dejó morir en el río, otras que fue ejecutada, y otras que vivió en desgracia hasta su muerte. 
+
+Después de su muerte, comenzó a aparecerse por las noches, cerca de los ríos o lagunas, vestida de blanco, llorando desconsoladamente y gritando: 
+“¡Ay, mis hijos!” 
+
+Desde entonces, su alma vaga como un espíritu atormentado. Se dice que busca a sus hijos entre los vivos, y que si escucha el llanto de un niño o ve a uno solo, intenta llevárselo, confundiéndolo con los suyos. 
 `;
