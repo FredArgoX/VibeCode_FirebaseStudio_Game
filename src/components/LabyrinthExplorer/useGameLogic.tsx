@@ -26,7 +26,7 @@ const initialState: GameState = {
   potionsScore: [],
   score: INITIAL_SCORE,
   lives: INITIAL_LIVES,
-  difficulty: 'easy',
+  difficulty: 'facil',
   gameStatus: 'story',
   playerPath: [],
   aiSolutionPath: null,
@@ -52,7 +52,7 @@ function gameReducer(state: GameState, action: Action): GameState {
         potionsScore,
         gameStatus: 'playing',
         playerPath: [playerStart],
-        message: "Find the child!",
+        message: "Encuentra al niño!",
       };
     }
     case 'MOVE_PLAYER': {

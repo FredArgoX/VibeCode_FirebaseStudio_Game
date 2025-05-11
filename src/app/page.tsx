@@ -11,7 +11,7 @@ type AppState = 'story' | 'menu' | 'playing';
 
 export default function HomePage() {
   const [appState, setAppState] = useState<AppState>('story');
-  const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty>('easy');
+  const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty>('facil');
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function HomePage() {
   if (!isClient) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <p className="text-xl text-foreground">Loading Labyrinth...</p>
+        <p className="text-xl text-foreground">Cargando laberinto...</p>
       </div>
     ); // Or a loading spinner
   }

@@ -10,7 +10,8 @@ interface GameMenuProps {
 }
 
 export function GameMenu({ onStartGame }: GameMenuProps) {
-  const difficulties: Difficulty[] = ['easy', 'medium', 'hard'];
+  const difficulties: Difficulty[] = ['facil', 'medio', 'dificil'];
+  //const difficulties: Difficulty[] = ['facil', 'medio', 'dificil'];
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
@@ -25,7 +26,7 @@ export function GameMenu({ onStartGame }: GameMenuProps) {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <p className="text-center text-lg font-medium">Elije la dificultad:</p>
+          <p className="text-center text-lg font-medio">Elije la dificultad:</p>
           {difficulties.map((level) => (
             <Button
               key={level}
@@ -40,7 +41,7 @@ export function GameMenu({ onStartGame }: GameMenuProps) {
         </CardContent>
         <CardFooter>
           <p className="text-xs text-muted-foreground text-center w-full">
-            Arrow keys or on-screen buttons to move.
+            Teclas de flecha o botones en pantalla para moverte.
           </p>
         </CardFooter>
       </Card>

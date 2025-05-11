@@ -23,7 +23,7 @@ export function HUD({ score, lives, message, difficulty }: HUDProps) {
           <span className="font-semibold text-primary-foreground">{score}</span>
         </div>
         <div className="text-sm text-center sm:text-left text-muted-foreground capitalize">
-          Difficulty: {difficulty}
+          Dificultad: {difficulty}
         </div>
         {message && (
           <div className="flex items-center space-x-1 text-xs sm:text-sm text-accent">

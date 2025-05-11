@@ -15,7 +15,7 @@ export function StoryIntro({ isOpen, onClose }: StoryIntroProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[600px] bg-card text-card-foreground shadow-xl rounded-lg">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-center text-accent">La Leyenda de La Llorona<br/>By: SamuelFredX Technologies</DialogTitle>
+          <DialogTitle className="text-2xl font-bold text-center text-accent">La Leyenda de La Llorona<br/>Por: SamuelFred CompanyX</DialogTitle>
         </DialogHeader>
         <ScrollArea className="h-[300px] w-full p-1 rounded-md border border-border">
           <DialogDescription className="text-sm whitespace-pre-line p-4 leading-relaxed">

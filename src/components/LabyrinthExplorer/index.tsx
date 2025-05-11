@@ -70,12 +70,12 @@ export function LabyrinthExplorer({ difficulty: initialDifficulty, onReturnToMen
       {(state.gameStatus === 'gameOver' || state.gameStatus === 'won') && (
         <div className="text-center p-4 bg-card rounded-lg shadow-xl">
           <h2 className="text-2xl font-bold mb-2 text-accent">
-            {state.gameStatus === 'won' ? 'You Found the Child!' : 'The Labyrinth Claims You...'}
+            {state.gameStatus === 'won' ? 'Encontraste al niño!' : 'El laberinto te reclama...'}
           </h2>
-          <p className="mb-4 text-card-foreground">Final Score: {state.score}</p>
+          <p className="mb-4 text-card-foreground">Puntaje Final: {state.score}</p>
           <div className="space-x-2">
-            <Button onClick={resetLevel} className="bg-primary hover:bg-primary/90 text-primary-foreground">Play Again ({state.difficulty})</Button>
-            <Button onClick={onReturnToMenu} variant="outline">Return to Menu</Button>
+            <Button onClick={resetLevel} className="bg-primary hover:bg-primary/90 text-primary-foreground">Jugar de Nuevo ({state.difficulty})</Button>
+            <Button onClick={onReturnToMenu} variant="outline">Regresar al Menu</Button>
           </div>
         </div>
       )}
@@ -87,7 +87,7 @@ export function LabyrinthExplorer({ difficulty: initialDifficulty, onReturnToMen
          <p className="text-muted-foreground italic">Game is paused or loading AI solution...</p>
       )}
        <Button onClick={onReturnToMenu} variant="link" className="mt-4 text-muted-foreground">
-        Quit to Menu
+        Regresar al Menu
       </Button>
     </div>
   );

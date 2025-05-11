@@ -1,21 +1,21 @@
 import type { GameConfig, Difficulty } from './types';
 
 export const DIFFICULTY_SETTINGS: Record<Difficulty, GameConfig> = {
-  easy: {
+  facil: {
     rows: 10,
     cols: 10,
     numHunters: 1,
     numPotionsLife: 2,
     numPotionsScore: 2,
   },
-  medium: {
+  medio: {
     rows: 15,
     cols: 15,
     numHunters: 3,
     numPotionsLife: 3,
     numPotionsScore: 3,
   },
-  hard: {
+  dificil: {
     rows: 20,
     cols: 20,
     numHunters: 5,
@@ -29,12 +29,12 @@ export const INITIAL_SCORE = 0;
 export const POTION_SCORE_VALUE = 50;
 
 export const MESSAGES = {
-  welcome: "La Llorona's Labyrinth",
-  gameOver: "Game Over. The spirits claim you...",
-  levelComplete: "You found the child! But the Labyrinth shifts...",
-  potionLife: "A soothing potion! You feel stronger.",
-  potionScore: "Sparkling essence! Your resolve grows.",
-  hunterEncounter: "A hunter! You narrowly escape, but feel drained.",
+  welcome: "Laberinto de La Llorona",
+  gameOver: "Juego terminado. Los espíritus te reclaman...",
+  levelComplete: "¡Encontraste al niño! Pero el laberinto cambia...",
+  potionLife: "¡Una poción reconfortante! Te sientes más fuerte.",
+  potionScore: "¡Esencia resplandeciente! Tu determinación aumenta.",
+  hunterEncounter: "¡Un cazador! Escapas por poco.",
 };
 
 export const LA_LLORONA_STORY = `

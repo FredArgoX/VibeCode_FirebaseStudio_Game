@@ -17,7 +17,7 @@ export interface Point {
 
 export type MazeGrid = CellType[][];
 
-export type Difficulty = 'easy' | 'medium' | 'hard';
+export type Difficulty = 'facil' | 'medio' | 'dificil';
 
 export interface GameConfig {
   rows: number;
