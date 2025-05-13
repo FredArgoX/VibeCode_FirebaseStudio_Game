@@ -199,7 +199,7 @@ export function useGameLogic() {
     } catch (error) {
       console.error("AI Maze Solver Error:", error);
       dispatch({ type: 'SET_AI_PATH', path: null });
-      dispatch({ type: 'SET_MESSAGE', message: "AI failed to solve." });
+      dispatch({ type: 'SET_MESSAGE', message: "Gracias por jugar nuestro juego. Esta función se implementará posteriormente. Atte: SamuelFred ComanyX." });
     }
   }, [state.mazeGrid, state.playerPos, state.childPos]);
 

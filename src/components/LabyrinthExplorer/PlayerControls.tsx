@@ -32,7 +32,7 @@ export function PlayerControls({ onMove, onSolveMaze, disabled }: PlayerControls
         </Button>
  </div>
       <Button onClick={onSolveMaze} variant="ghost" disabled={disabled} className="mt-6 text-accent hover:bg-accent/20">
-        <Zap className="mr-2 h-4 w-4" /> AI Solve
+        <Zap className="mr-2 h-4 w-4" /> Resolver con AI
       </Button>
     </div>
   );
